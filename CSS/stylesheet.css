@@ -219,9 +219,18 @@ main {
 }
 
 .site-navbar .nav-link.active {
-    background-color: var(--accent-color) !important;
+    background-color: transparent !important;
     color: var(--alt-font-color) !important;
-    border-color: var(--accent-color);
+    border-color: transparent;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+/* Optional class for a Home nav link to keep button-style active state */
+.site-navbar .nav-link.home-btn.active {
+    background-color: var(--main-color) !important;
+    color: #ffffff !important;
+    border-color: var(--main-color);
+    border-bottom: 2px solid transparent;
 }
 
 /* Contact button */
@@ -244,6 +253,7 @@ main {
     background-color: var(--accent-color) !important;
     border-color: var(--accent-color);
     color: var(--alt-font-color) !important;
+    border-bottom: 2px solid transparent;
 }
 
 .navbar-toggler {
