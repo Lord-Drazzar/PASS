@@ -25,6 +25,410 @@ main {
     flex: 1;
 }
 
+.about-main {
+    width: 100%;
+}
+
+.faq-main {
+    width: 100%;
+}
+
+/* ===== SERVICES PAGE ===== */
+.services-main {
+    width: 100%;
+}
+
+.services-intro-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    color: #000000;
+}
+
+.services-packages-section {
+    background-color: #ffffff;
+    color: var(--alt-font-color);
+}
+
+.services-package-card {
+    background-color: #ffffff;
+    border: 2px solid rgba(0, 47, 108, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0, 47, 108, 0.10);
+    padding: 2.75rem;
+}
+
+.services-package-header {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.services-package-title {
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    font-weight: 700;
+    color: var(--alt-font-color);
+    margin: 0;
+}
+
+.services-grade-badge {
+    background-color: rgba(153, 225, 224, 0.35);
+    border: 1.5px solid var(--alt-color);
+    border-radius: 999px;
+    color: var(--alt-font-color);
+    font-size: 0.92rem;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    white-space: nowrap;
+}
+
+.services-package-desc {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.services-inner-divider {
+    border: 0;
+    border-top: 1.5px solid rgba(0, 47, 108, 0.14);
+    margin: 1.75rem 0;
+}
+
+.services-sub-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--alt-font-color);
+    margin-bottom: 1rem;
+}
+
+.services-feature-list,
+.services-outcome-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.services-feature-list li,
+.services-outcome-list li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.services-feature-list li::before {
+    content: "\2713";
+    color: var(--accent-color);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+}
+
+.services-outcome-list li::before {
+    content: "\25B6";
+    color: var(--alt-font-color);
+    font-size: 0.65rem;
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+}
+
+.services-cta-section {
+    color: #ffffff;
+}
+
+.services-cta-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--accent-font-color);
+    margin-bottom: 0.4rem;
+}
+
+.services-cta-sub {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--main-font-color);
+    margin-bottom: 1.5rem;
+}
+
+.services-steps-list {
+    padding-left: 1.5rem;
+    margin: 0;
+    display: grid;
+    gap: 1.1rem;
+}
+
+.services-steps-list li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+.services-cta-link {
+    color: var(--accent-font-color);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.services-cta-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+    .services-package-card {
+        padding: 1.75rem;
+    }
+}
+
+.faq-intro-copy {
+    text-align: left;
+}
+
+.faq-intro-copy h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(2.2rem, 4.8vw, 4rem);
+    font-weight: 700;
+    color: #000000;
+}
+
+.faq-intro-copy p {
+    margin: 0;
+    font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+    font-weight: 600;
+    color: var(--alt-font-color);
+}
+
+.faq-section {
+    background-color: #ffffff;
+    color: var(--alt-font-color);
+}
+
+.faq-accordion {
+    display: grid;
+    gap: 1rem;
+}
+
+.faq-item {
+    border: 2px solid rgba(0, 47, 108, 0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0, 47, 108, 0.08);
+}
+
+.faq-item .accordion-button {
+    background-color: #ffffff;
+    color: var(--alt-font-color);
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.5;
+    padding: 1.4rem 1.5rem;
+}
+
+.faq-item .accordion-button:not(.collapsed) {
+    background-color: rgba(153, 225, 224, 0.2);
+    color: var(--alt-font-color);
+    box-shadow: none;
+}
+
+.faq-item .accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(57, 204, 145, 0.2);
+}
+
+.faq-item .accordion-button::after {
+    background-size: 1.1rem;
+}
+
+.faq-item .accordion-body {
+    color: var(--alt-font-color);
+    font-size: 1.02rem;
+    line-height: 1.8;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.contact-main {
+    width: 100%;
+}
+
+.contact-intro {
+    background-image: linear-gradient(rgba(173, 173, 173, 0.78), rgba(173, 173, 173, 0.78)), url("../Img/stairs_group.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.contact-intro-copy {
+    text-align: left;
+    background-color: rgba(0, 47, 108, 0.72);
+    border-radius: 24px;
+    color: #ffffff;
+    padding: 2.5rem;
+    backdrop-filter: blur(2px);
+}
+
+.contact-intro-copy h1 {
+    font-size: clamp(2.2rem, 4.8vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-font-color);
+}
+
+.contact-subheader {
+    font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    max-width: 44rem;
+}
+
+.contact-invitation {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    margin-bottom: 0;
+    max-width: 52rem;
+}
+
+.contact-form-section {
+    background-color: #ffffff;
+    color: var(--alt-font-color);
+}
+
+.contact-form-card {
+    background-color: rgba(255, 255, 255, 0.96);
+    border: 2px solid rgba(0, 47, 108, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0, 47, 108, 0.12);
+    padding: 2.5rem;
+}
+
+.contact-inquiry-form .form-label {
+    color: var(--alt-font-color);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+}
+
+.contact-inquiry-form .form-control,
+.contact-inquiry-form .form-select {
+    border: 2px solid rgba(0, 47, 108, 0.16);
+    border-radius: 14px;
+    color: var(--alt-font-color);
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+}
+
+.contact-inquiry-form .form-control:focus,
+.contact-inquiry-form .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(57, 204, 145, 0.2);
+}
+
+.contact-inquiry-form textarea.form-control {
+    min-height: 9rem;
+    resize: vertical;
+}
+
+.contact-submit-btn {
+    background-color: var(--main-color);
+    border: 0;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 0.95rem 1.8rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-submit-btn:hover,
+.contact-submit-btn:focus {
+    background-color: var(--accent-color);
+    color: var(--alt-font-color);
+    transform: translateY(-1px);
+}
+
+.section-muted-founder {
+    background-color: var(--muted-color);
+    color: #000000;
+}
+
+.about-founder-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    color: #000000;
+    text-align: left;
+}
+
+.about-founder-section {
+    background-color: #ffffff;
+    color: var(--alt-font-color);
+}
+
+.about-mission-section {
+    background-color: #ffffff;
+    color: var(--alt-font-color);
+    padding-top: 1.5rem !important;
+}
+
+.founder-profile-card {
+    color: var(--alt-font-color);
+}
+
+.founder-profile-image {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 18px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.founder-profile-copy p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.founder-profile-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.founder-credentials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.founder-credential-logo {
+    max-height: 70px;
+    width: auto;
+    max-width: 28%;
+    object-fit: contain;
+}
+
+.about-divider {
+    margin: 2.5rem 0 0;
+    border: 0;
+    border-top: 2px solid rgba(0, 47, 108, 0.22);
+}
+
+.about-mission-copy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
 /* ===== HOME PAGE ===== */
 .home-main {
     width: 100%;
@@ -117,6 +521,14 @@ main {
     color: var(--accent-font-color);
 }
 
+.contact-intro.section-muted-mainfont {
+    background-image: linear-gradient(rgba(173, 173, 173, 0.78), rgba(173, 173, 173, 0.78)), url("../Img/stairs_group.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
 .section-main-white {
     background-color: var(--main-color);
     color: #ffffff;
@@ -178,6 +590,28 @@ main {
 }
 
 @media (max-width: 991.98px) {
+    .about-founder-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .contact-form-card {
+        padding: 1.75rem;
+    }
+
+    .contact-intro-copy {
+        padding: 1.75rem;
+    }
+
+    .faq-item .accordion-button,
+    .faq-item .accordion-body {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
+
+    .founder-credential-logo {
+        max-width: 44%;
+    }
+
     .third-section-box h2 {
         white-space: normal;
     }
