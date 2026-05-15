@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Text:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
 :root {
     --main-color: #002f6c;
     --alt-color: #99e1e0;
@@ -7,6 +9,9 @@
     --accent-color: #39cc91;
     --muted-font-color: #adadad;
     --accent-font-color: #39cc91;
+    --header-font: "Noto Serif", serif;
+    --subheader-font: "DM Serif Text", serif;
+    --body-font: "DM Sans", sans-serif;
 }
 
 /* ===== GENERAL ===== */
@@ -19,6 +24,39 @@ body {
     flex-direction: column;
     background-color: var(--alt-color);
     padding-top: 15vh;
+    font-family: var(--body-font);
+}
+
+h1,
+h2 {
+    font-family: var(--header-font);
+}
+
+h3,
+h4,
+h5,
+h6,
+.subheader,
+[class*="subheader"],
+.services-sub-heading,
+.services-cta-sub,
+.accordion-button {
+    font-family: var(--subheader-font);
+}
+
+p,
+li,
+a,
+button,
+input,
+select,
+textarea,
+label,
+blockquote,
+figcaption,
+td,
+th {
+    font-family: var(--body-font);
 }
 
 main {
@@ -420,7 +458,7 @@ main {
 .about-divider {
     margin: 2.5rem 0 0;
     border: 0;
-    border-top: 2px solid rgba(0, 47, 108, 0.22);
+    border-top: 2px solid var(--main-color);
 }
 
 .about-mission-copy p {
@@ -504,6 +542,7 @@ main {
 
 .section-white-mainfont p {
     line-height: 1.4;
+    color: var(--alt-font-color);
 }
 
 .section-muted-mainfont {
@@ -589,6 +628,50 @@ main {
     margin-bottom: 0;
 }
 
+.services-testimonials-section {
+    background-color: var(--alt-color);
+    color: var(--alt-font-color);
+}
+
+.testimonials-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.services-testimonials-title {
+    font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+    font-weight: 700;
+    color: var(--alt-font-color);
+    margin-bottom: 2rem;
+    font-family: var(--header-font);
+    text-align: center;
+}
+
+.why-work-left,
+.why-work-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-cert-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    align-items: center;
+}
+
+.home-cert-logo {
+    width: auto;
+    height: 54px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0.4rem 1.1rem;
+    object-fit: contain;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
 @media (max-width: 991.98px) {
     .about-founder-title {
         font-size: clamp(1.75rem, 8vw, 2.5rem);
@@ -615,6 +698,11 @@ main {
     .third-section-box h2 {
         white-space: normal;
     }
+
+    .home-cert-logo {
+        height: 44px;
+        padding: 0.3rem 0.7rem;
+    }
 }
 
 /* ===== NAVBAR ===== */
@@ -625,16 +713,31 @@ main {
     right: 0;
     width: 100%;
     z-index: 1030;
-    min-height: 15vh;
+    min-height: 12.75vh;
     background-color: #ffffff !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .site-navbar .navbar-logo img {
-    height: 15vh;
-    max-height: 135px;
+    height: 12.75vh;
+    max-height: 115px;
     width: auto;
     object-fit: contain;
+}
+
+.site-navbar .navbar-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--alt-color);
+    border-radius: 14px;
+    padding: 0.3rem 1.5rem;
+    margin: 1rem 0;
+    transition: background-color 0.2s ease;
+}
+
+.site-navbar .navbar-logo:hover {
+    background-color: var(--accent-color);
 }
 
 .site-navbar .navbar-nav {
