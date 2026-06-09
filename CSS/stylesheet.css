@@ -354,6 +354,33 @@ main {
     transform: translateY(-1px);
 }
 
+.contact-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.contact-form-or {
+    color: #000000;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1;
+}
+
+.contact-book-btn {
+    background-color: var(--accent-color);
+    color: var(--alt-font-color);
+}
+
+.contact-book-btn:hover,
+.contact-book-btn:focus {
+    background-color: var(--main-color);
+    color: #ffffff;
+}
+
 .section-muted-founder {
     background-color: var(--muted-color);
     color: #000000;
@@ -758,6 +785,12 @@ main {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+.social-links .linkedin-icon {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
 }
 
 .social-links a:hover {
