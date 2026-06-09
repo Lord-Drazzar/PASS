@@ -34,9 +34,14 @@ function parsePayload_(e) {
     payload = {};
   }
 
+  var phoneNumber = payload.phoneNumber || payload.phone || payload["phone-number"] || payload.parentPhone || "";
+  var emailAddress = payload.emailAddress || payload.email || payload["email-address"] || payload.parentEmail || "";
+
   return {
     parentName: String(payload.parentName || "").trim(),
     studentName: String(payload.studentName || "").trim(),
+    phoneNumber: String(phoneNumber || "").trim(),
+    emailAddress: String(emailAddress || "").trim(),
     studentStage: String(payload.studentStage || "").trim(),
     referralSource: String(payload.referralSource || "").trim(),
     website: String(payload.website || "").trim(),
@@ -70,6 +75,8 @@ function appendLeadToSheet_(payload) {
       "Timestamp",
       "Parent Name",
       "Student Name",
+      "Phone Number",
+      "Email Address",
       "Student Stage",
       "Referral Source",
       "Submitted At",
@@ -82,6 +89,8 @@ function appendLeadToSheet_(payload) {
     new Date(),
     payload.parentName,
     payload.studentName,
+    payload.phoneNumber,
+    payload.emailAddress,
     payload.studentStage,
     payload.referralSource,
     payload.submittedAt,
@@ -98,6 +107,8 @@ function sendLeadEmail_(payload) {
     "",
     "Parent Name: " + payload.parentName,
     "Student Name: " + payload.studentName,
+    "Phone Number: " + payload.phoneNumber,
+    "Email Address: " + payload.emailAddress,
     "Student Stage: " + payload.studentStage,
     "Referral Source: " + payload.referralSource,
     "Submitted At: " + payload.submittedAt,

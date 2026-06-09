@@ -55,6 +55,15 @@ populateStudentStageYears();
         statusEl.style.color = isError ? "#b00020" : "#0f5132";
     }
 
+    function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function hasMinimumPhoneDigits(value, minimumDigits) {
+        const digits = value.replace(/\D/g, "");
+        return digits.length >= minimumDigits;
+    }
+
     form.addEventListener("submit", async function onSubmit(event) {
         event.preventDefault();
         const isBookNow = event.submitter && event.submitter.dataset.bookNow === "true";
@@ -68,6 +77,10 @@ populateStudentStageYears();
         const payload = {
             parentName: (formData.get("parent-name") || "").toString().trim(),
             studentName: (formData.get("student-name") || "").toString().trim(),
+            phoneNumber: (formData.get("phone-number") || "").toString().trim(),
+            emailAddress: (formData.get("email-address") || "").toString().trim(),
+            phone: (formData.get("phone-number") || "").toString().trim(),
+            email: (formData.get("email-address") || "").toString().trim(),
             studentStage: (formData.get("student-stage") || "").toString().trim(),
             referralSource: (formData.get("referral-source") || "").toString().trim(),
             website: (formData.get("website") || "").toString().trim(),
@@ -77,8 +90,18 @@ populateStudentStageYears();
             timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone || ""
         };
 
-        if (!payload.parentName || !payload.studentName || !payload.studentStage) {
-            setStatus("Please complete parent name, student name, and student stage.", true);
+        if (!payload.parentName || !payload.studentName || !payload.phoneNumber || !payload.emailAddress || !payload.studentStage) {
+            setStatus("Please complete parent name, student name, phone number, email address, and student stage.", true);
+            return;
+        }
+
+        if (!isValidEmail(payload.emailAddress)) {
+            setStatus("Please enter a valid email address.", true);
+            return;
+        }
+
+        if (!hasMinimumPhoneDigits(payload.phoneNumber, 10)) {
+            setStatus("Please enter a valid phone number with at least 10 digits.", true);
             return;
         }
 

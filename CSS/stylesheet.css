@@ -758,15 +758,17 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--alt-color);
-    border-radius: 14px;
-    padding: 0.3rem 1.5rem;
+    background-color: #ffffff;
+    border: 2px solid var(--alt-color);
+    border-radius: 48%;
+    padding: 0.55rem 2.2rem;
     margin: 1rem 0;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .site-navbar .navbar-logo:hover {
-    background-color: var(--accent-color);
+    background-color: var(--alt-color);
+    border-color: var(--alt-color);
 }
 
 .site-navbar .navbar-nav {
@@ -911,5 +913,5 @@ main {
     margin-top: 0.8rem;
     font-style: italic;
     font-size: 1.65rem;
-    color: #ffffff;
+    color: var(--alt-font-color);
 }
