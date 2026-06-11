@@ -743,7 +743,7 @@ main {
     flex-shrink: 0;
     z-index: 1030;
     min-height: 12.75vh;
-    background-color: #ffffff !important;
+    background-color: var(--alt-color) !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -786,9 +786,9 @@ main {
     transition: background-color 0.2s, color 0.2s;
 }
 
-.site-navbar .nav-link:hover {
-    background-color: var(--alt-color);
-    color: var(--alt-font-color) !important;
+.site-navbar .nav-link:not(.contact-btn):hover {
+    background-color: var(--accent-color);
+    color: #ffffff !important;
 }
 
 .site-navbar .nav-link.active {
@@ -817,9 +817,9 @@ main {
 }
 
 .site-navbar .nav-link.contact-btn:hover {
-    background-color: var(--alt-color);
-    color: var(--alt-font-color) !important;
-    border-color: var(--alt-color);
+    background-color: var(--accent-color);
+    color: #ffffff !important;
+    border-color: var(--accent-color);
 }
 
 .site-navbar .nav-link.contact-btn.active {

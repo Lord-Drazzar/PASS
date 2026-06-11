@@ -11,6 +11,7 @@ function doPost(e) {
     validatePayload_(payload);
     appendLeadToSheet_(payload);
     sendLeadEmail_(payload);
+    subscribeLeadToMailerLite_(payload);
 
     return corsJsonResponse_({ ok: true, message: "Lead captured." });
   } catch (err) {
@@ -56,11 +57,46 @@ function validatePayload_(payload) {
   if (!payload.parentName) {
     throw new Error("Parent name is required.");
   }
+  if (!payload.emailAddress) {
+    throw new Error("Email address is required.");
+  }
   if (!payload.studentName) {
     throw new Error("Student name is required.");
   }
   if (!payload.studentStage) {
     throw new Error("Student stage is required.");
+  }
+}
+
+function subscribeLeadToMailerLite_(payload) {
+  var token = getScriptPropertyOrThrow_("MAILERLITE_API_TOKEN");
+  var groupId = PropertiesService.getScriptProperties().getProperty("MAILERLITE_GROUP_ID") || "187403591203423234";
+  var endpoint = "https://connect.mailerlite.com/api/subscribers";
+
+  var body = {
+    email: payload.emailAddress,
+    fields: {
+      name: payload.parentName,
+      phone: payload.phoneNumber
+    },
+    groups: [groupId]
+  };
+
+  var response = UrlFetchApp.fetch(endpoint, {
+    method: "post",
+    contentType: "application/json",
+    headers: {
+      Authorization: "Bearer " + token,
+      Accept: "application/json"
+    },
+    muteHttpExceptions: true,
+    payload: JSON.stringify(body)
+  });
+
+  var status = response.getResponseCode();
+  if (status < 200 || status >= 300) {
+    var responseText = response.getContentText() || "";
+    throw new Error("MailerLite subscribe failed (" + status + "): " + responseText);
   }
 }
 
